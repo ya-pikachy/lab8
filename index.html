@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Лабораторная №8 — Гео API · Омск</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@stlite/mount@0.86.0/build/stlite.css" />
+  <style>
+    body { margin: 0; background: #0a0a0a; }
+    #banner {
+      background: linear-gradient(135deg, #1a0000, #0a0a0a);
+      border-bottom: 2px solid #dc2626;
+      padding: 14px 24px;
+      color: #fafafa;
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+    }
+    #banner a { color: #fca5a5; }
+    #root { min-height: calc(100vh - 52px); }
+  </style>
+</head>
+<body>
+  <div id="banner">
+    Лабораторная №8 · Вариант 2 · Омск (аэропорт → центр) &nbsp;|&nbsp;
+    <a href="https://github.com/ya-pikachy/lab8" target="_blank">Исходный код</a>
+  </div>
+  <div id="root"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@stlite/mount@0.86.0/build/stlite.js"></script>
+  <script>
+    stlite.mount(
+      {
+        requirements: [
+          "streamlit==1.41.1",
+          "folium==0.19.4",
+          "streamlit-folium==0.23.1",
+          "requests==2.32.3",
+          "pygeohash==1.2.0",
+          "branca==0.8.1",
+          "jinja2",
+        ],
+        entrypoint: "app.py",
+        files: {
+          "app.py": { url: "./app.py" },
+        },
+      },
+      document.getElementById("root")
+    );
+  </script>
+</body>
+</html>
